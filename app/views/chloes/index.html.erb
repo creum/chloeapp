@@ -1,0 +1,27 @@
+<h1>Listing chloes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chloes.each do |chlo| %>
+      <tr>
+        <td><%= chlo.name %></td>
+        <td><%= link_to 'Show', chlo %></td>
+        <td><%= link_to 'Edit', edit_chlo_path(chlo) %></td>
+        <td><%= link_to 'Destroy', chlo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chloe', new_chlo_path %>
